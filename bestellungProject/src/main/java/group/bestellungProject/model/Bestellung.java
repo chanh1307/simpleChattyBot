@@ -18,45 +18,7 @@ public class Bestellung {
 		
 	}
 
-	public int getBestellungNr() {
-		return bestellungNr;
-	}
-
-	public void setBestellungNr(int bestellungNr) {
-		this.bestellungNr = bestellungNr;
-	}
-
-	public List<Produkt> getProdukte() {
-		return produkte;
-	}
-
-	public void setProdukte(List<Produkt> produkte) {
-		this.produkte = produkte;
-	}
-
-	public Kunde getKunde() {
-		return kunde;
-	}
-
-	public void setKunde(Kunde kunde) {
-		this.kunde = kunde;
-	}
-
-	public double getSumme() {
-		return summe;
-	}
-
-	public void setSumme(double summe) {
-		this.summe = summe;
-	}
-
-	public ZArt getZahlungArt() {
-		return zahlungArt;
-	}
-
-	public void setZahlungArt(ZArt zahlungArt) {
-		this.zahlungArt = zahlungArt;
-	}
+	
 
 	public Bestellung(int bestellungNr, List<Produkt> produkte, Kunde kunde, double summe, ZArt zahlungArt) {
 		this.bestellungNr = bestellungNr;
