@@ -6,9 +6,16 @@ public class KundenController {
 
 	private KassenController kassenController;
 
-	public Kunde sucheKunde() {
+	public KundenController(KassenController kassenController) {
+		this.kassenController = kassenController;
+	}
+
+
+
+	public Kunde sucheKunde(String suchString) {
 		return null;
 	}
+
 
 	public void kundeHinzufuegen() {
 
