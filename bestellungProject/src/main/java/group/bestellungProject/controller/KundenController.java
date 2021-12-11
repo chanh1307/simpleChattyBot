@@ -10,7 +10,7 @@ public class KundenController {
 		return null;
 	}
 
-	public void kundeHinzufuegen() {
+	public void kundeHin() {
 
 	}
 
