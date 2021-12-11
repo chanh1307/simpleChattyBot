@@ -1,6 +1,7 @@
 package group.bestellungProject.controller;
 
 import group.bestellungProject.model.Kunde;
+import group.bestellungProject.model.Verwaltung;
 
 public class KundenController {
 
@@ -13,7 +14,8 @@ public class KundenController {
 
 
 	public Kunde sucheKunde(String suchString) {
-		return null;
+		Verwaltung verwaltung = kassenController.getVerwaltung();
+
 	}
 
 

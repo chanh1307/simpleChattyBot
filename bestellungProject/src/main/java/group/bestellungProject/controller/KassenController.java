@@ -1,5 +1,7 @@
 package group.bestellungProject.controller;
 
+import group.bestellungProject.model.Verwaltung;
+
 public class KassenController {
 
 	private KundenController kundenController;
@@ -7,6 +9,16 @@ public class KassenController {
 	private BestellungController bestellungController;
 
 	private ProduktController prodktController;
+
+	private Verwaltung verwaltung;
+
+	public Verwaltung getVerwaltung() {
+		return verwaltung;
+	}
+
+	public void setVerwaltung(Verwaltung verwaltung) {
+		this.verwaltung = verwaltung;
+	}
 
 	public KundenController getKundenController() {
 		return kundenController;
