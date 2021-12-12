@@ -1,14 +1,23 @@
 package group.bestellungProject.model;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "kunden")
 public class Kunde {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	@Column(name="kundenName", nullable = false)
 	private String kundenName;
-
+	@Column(name="adresse")
 	private String adresse;
-
+	@Column(name="telNr")
 	private String telNr;
 
+	public Kunde(){
+
+	}
 	public Kunde(int id, String kundenName, String adresse, String telNr) {
 		this.id = id;
 		this.kundenName = kundenName;
