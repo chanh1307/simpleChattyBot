@@ -2,6 +2,7 @@ package group.bestellungProject.controller;
 import group.bestellungProject.model.Kunde;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class TestServiceImpl implements TestService{
@@ -37,6 +38,20 @@ public class TestServiceImpl implements TestService{
     public void deleteKundeById(int id) {
         kundenRepository.deleteById(id);
     }
+
+    @Override
+    public List<Kunde> searchByKeyword(String keyword) {
+        List<Kunde> kunden = kundenRepository.findAll();
+        List<Kunde> ergListe = new ArrayList<>();
+        for (Kunde kunde : kunden) {
+            if ((kunde.getAdresse().contains(keyword)) || (kunde.getKundenName().contains(keyword)) || (kunde.getTelNr().contains(keyword))){
+                ergListe.add(kunde);
+            }
+        }
+        return ergListe;
+    }
+
+
 
 
 }

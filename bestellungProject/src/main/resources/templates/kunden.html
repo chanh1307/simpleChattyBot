@@ -30,9 +30,15 @@
     <div class="row">
         <div class="col-lg-3">
             <a th:href = "@{/kunden/neu}" class="btn btn-primary btn-sm mb-3">Neu Kunde</a>
-            <a th:href = "@{/kunden/suche}" class="btn btn-primary btn-sm mb-3">Kunde Suche</a>
         </div>
     </div>
+    <div>
+        <form th:action="@{/kunden}" method="get">
+            <input id="txtSearch" type="text" name="keyword">
+            <button type="submit">Suche</button>
+        </form>
+    </div>
+    <br>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
@@ -55,6 +61,8 @@
         </tr>
         </tbody>
     </table>
+
+
 </div>
 
 </body>
