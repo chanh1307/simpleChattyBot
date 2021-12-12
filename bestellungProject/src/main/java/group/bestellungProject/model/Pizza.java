@@ -3,8 +3,8 @@ public class Pizza extends Produkt {
 
 	private Size size;
 
-	public Pizza(int artikelNr, double preis, String artikelName, String beschreibung, Size size) {
-		super(artikelNr, preis, artikelName, beschreibung);
+	public Pizza(int id, double preis, String artikelName, String beschreibung, Size size) {
+		super(id, preis, artikelName, beschreibung);
 		this.size = size;
 	}
 

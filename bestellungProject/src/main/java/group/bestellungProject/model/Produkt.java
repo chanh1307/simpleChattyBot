@@ -1,27 +1,40 @@
 package group.bestellungProject.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "produkte")
 public class Produkt {
-
-	private int artikelNr;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@Column(name="preis")
 	private double preis;
-
-	private String artikelName;
-
+	@Column(name="produktName", nullable = false)
+	private String produktName;
+	@Column(name="beschreibung")
 	private String beschreibung;
-
-	public Produkt(int artikelNr, double preis, String artikelName, String beschreibung) {
-		this.artikelNr = artikelNr;
+	public Produkt() {
+		
+	}
+	public Produkt(int id,double preis, String produktName, String beschreibung) {
+		this.id = id;
 		this.preis = preis;
-		this.artikelName = artikelName;
+		this.produktName = produktName;
 		this.beschreibung = beschreibung;
 	}
 
-	public int getArtikelNr() {
-		return artikelNr;
+	public int getid() {
+		return id;
 	}
 
-	public void setArtikelNr(int artikelNr) {
-		this.artikelNr = artikelNr;
+	public void setid(int id) {
+		this.id = id;
 	}
 
 	public double getPreis() {
@@ -32,12 +45,12 @@ public class Produkt {
 		this.preis = preis;
 	}
 
-	public String getArtikelName() {
-		return artikelName;
+	public String getproduktName() {
+		return produktName;
 	}
 
-	public void setArtikelName(String artikelName) {
-		this.artikelName = artikelName;
+	public void setproduktName(String produktName) {
+		this.produktName = produktName;
 	}
 
 	public String getBeschreibung() {
