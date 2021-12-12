@@ -7,9 +7,9 @@ public class Kunde {
 
 	private String adresse;
 
-	private int telNr;
+	private String telNr;
 
-	public Kunde(int id, String kundenName, String adresse, int telNr) {
+	public Kunde(int id, String kundenName, String adresse, String telNr) {
 		this.id = id;
 		this.kundenName = kundenName;
 		this.adresse = adresse;
@@ -40,11 +40,11 @@ public class Kunde {
 		this.adresse = adresse;
 	}
 
-	public int getTelNr() {
+	public String getTelNr() {
 		return telNr;
 	}
 
-	public void setTelNr(int telNr) {
+	public void setTelNr(String telNr) {
 		this.telNr = telNr;
 	}
 }

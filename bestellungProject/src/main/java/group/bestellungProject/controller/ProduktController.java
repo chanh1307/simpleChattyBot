@@ -1,15 +1,17 @@
 package group.bestellungProject.controller;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import group.bestellungProject.model.Produkt;
 import group.bestellungProject.model.Verwaltung;
 
+
 public class ProduktController {
 
 	private KassenController kassenController;
-	
+
 
 	public void produktErstellen(int artikelNr, double preis, String artikelName, String beschreibung) {
 			if(artikelName == null ) {
@@ -17,8 +19,8 @@ public class ProduktController {
 			}else {
 				Produkt produkt = new Produkt(artikelNr, preis, artikelName, beschreibung);
 				kassenController.getVerwaltung().getProdukte().add(produkt);
-			}
-	}
+			}}
+
 	public List<Produkt> sucheProdukt(String suchString){
 		if(suchString == null   ) {
 			throw new NullPointerException("invalid Param");
