@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestellung Projekt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" th:href="@{/kunden}">Bestellung Projekt</a>
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/kunden}">Start Seite</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/kunden/neu}">Neue Kunden</a>
+        </li>
+    </ul>
+
+</nav>
+
+<div class="container">
+    <div class="row">
+        <h1>Kundenliste</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href = "@{/kunden/neu}" class="btn btn-primary btn-sm mb-3">Neu Kunde</a>
+            <a th:href = "@{/kunden/suche}" class="btn btn-primary btn-sm mb-3">Kunde Suche</a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Adresse</th>
+            <th>Telefon</th>
+            <th>Option</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each = "kunde: ${kunden}">
+            <td th:text = "${kunde.getKundenName()}"></td>
+            <td th:text = "${kunde.getAdresse()}"></td>
+            <td th:text = "${kunde.getTelNr()}"></td>
+            <td>
+                <a th:href="@{/kunden/edit/{id}(id=${kunde.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/kunden/{id}(id=${kunde.id})}" class="btn btn-danger">Löschen</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
