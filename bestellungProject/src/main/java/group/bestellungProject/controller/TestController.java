@@ -3,10 +3,7 @@ package group.bestellungProject.controller;
 import group.bestellungProject.model.Kunde;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TestController {
@@ -18,11 +15,12 @@ public class TestController {
 		this.testService = testService;
 	}
 
+	/*
 	@GetMapping("/kunden")
 	public String listKunden(Model model) {
 		model.addAttribute("kunden",testService.getAllKunde());
 		return "kunden";
-	}
+	}*/
 
 	@GetMapping("/kunden/neu")
 	public String addKunden(Model model) {
@@ -58,6 +56,17 @@ public class TestController {
 	public String deleteKunden(@PathVariable int id){
 		testService.deleteKundeById(id);
 		return "redirect:/kunden";
+	}
+
+	@GetMapping("/kunden")
+	public String searchKundenForm(Model model, String keyword) {
+		if(keyword != null) {
+			model.addAttribute("kunden", testService.searchByKeyword(keyword));
+		}
+		else {
+			model.addAttribute("kunden", testService.getAllKunde());
+		}
+		return "kunden";
 	}
 
 }

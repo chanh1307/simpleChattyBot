@@ -1,6 +1,7 @@
 package group.bestellungProject.controller;
 
 import group.bestellungProject.model.Kunde;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -10,5 +11,7 @@ public interface TestService {
     Kunde updateKunde(Kunde kunde);
     Kunde getKundeById(int id);
     void deleteKundeById(int id);
-    //List<Kunde> findBy
+    List<Kunde> searchByKeyword(String keyword);
+
+
 }
