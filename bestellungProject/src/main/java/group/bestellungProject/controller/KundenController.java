@@ -28,9 +28,11 @@ public class KundenController {
 		return ergListe;
 	}
 
-	public void kundeHinzufuegen(Kunde kunde) {
+	public void kundeErstellen(String name, String adresse, String telNr) {
 		Verwaltung verwaltung = kassenController.getVerwaltung();
-		List<Kunde> kundenListe = verwaltung.getKunden();
+		List<Kunde> kundenListe = verwaltung.getKunden();	
+		int newId = kundenListe.size()+1;
+		Kunde kunde = new Kunde(newId, name, adresse, telNr);
 		kundenListe.add(kunde);
 	}
 }
