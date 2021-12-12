@@ -8,10 +8,18 @@ public class KassenController {
 
 	private BestellungController bestellungController;
 
-	private ProduktController prodktController;
-
+	private ProduktController produktController;
+	
 	private Verwaltung verwaltung;
-
+	public KassenController () {
+		verwaltung = new Verwaltung();
+		kundenController = new KundenController(this);
+		bestellungController = new BestellungController(this);
+		produktController = new ProduktController(this);
+		
+		
+		
+	}
 	public Verwaltung getVerwaltung() {
 		return verwaltung;
 	}
@@ -37,10 +45,10 @@ public class KassenController {
 	}
 
 	public ProduktController getProdktController() {
-		return prodktController;
+		return produktController;
 	}
 
 	public void setProdktController(ProduktController prodktController) {
-		this.prodktController = prodktController;
+		this.produktController = prodktController;
 	}
 }
