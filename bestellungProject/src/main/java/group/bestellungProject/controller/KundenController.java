@@ -17,7 +17,7 @@ public class KundenController {
 	public List<Kunde> sucheKunde(String suchString) {
 		Verwaltung verwaltung = kassenController.getVerwaltung();
 		List<Kunde> kundenListe = verwaltung.getKunden();
-		List<Kunde> ergListe = new ArrayList();
+		List<Kunde> ergListe = new ArrayList<Kunde>();
 		for (Kunde kunde : kundenListe) {
 			if (kunde.getAdresse().contains(suchString)
 					|| kunde.getKundenName().contains(suchString)
@@ -33,5 +33,4 @@ public class KundenController {
 		List<Kunde> kundenListe = verwaltung.getKunden();
 		kundenListe.add(kunde);
 	}
-
 }
