@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestellung Projekt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" th:href="@{/kunden}">Bestellung Projekt</a>
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/produkt}">Produkt Seite</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/produkt/neu}">Neue Produkt</a>
+        </li>
+    </ul>
+
+</nav>
+
+<div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+        <h1 class="text-center">Neu Produkt</h1>
+        <div class="card-body">
+           
+            <form th:action="@{/produkt}" th:object = "${produkt}" method="post">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="produktName" th:field = "*{produktName}" class="form-control" placeholder="Produkt Name Eingeben">
+
+                </div>
+
+                <div class="form-group">
+                    <label>Preis</label>
+                    <input type="text" name="preis" th:field = "*{preis}" class="form-control" placeholder="Preis Eingeben">
+
+                </div>
+
+                <div class="form-group">
+                    <label>Beschreibung</label>
+                    <input type="text" name="beschreibung" th:field = "*{beschreibung}" class="form-control" placeholder="Beschreibung Eingeben">
+
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
