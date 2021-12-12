@@ -9,12 +9,15 @@ public class KundenController {
 
 	public KundenController(KassenController kassenController) {
 		this.kassenController = kassenController;
-	
+	}
+
+
 
 	public Kunde sucheKunde(String suchString) {
 		Verwaltung verwaltung = kassenController.getVerwaltung();
-
+			return null;
 	}
+
 
 	public void kundeHinzufuegen() {
 

@@ -23,6 +23,22 @@ public class Verwaltung {
 			produkte.add(produkt);
 		}
 	}
+	public void addKunde(Kunde kunde) {
+		if (kunde == null) {
+		//TODO exception;
+		
+		}else {
+			kunden.add(kunde);
+		}
+	}
+	public void addBestellung(Bestellung bestellung) {
+		if (bestellung == null) {
+		//TODO exception;
+		
+		}else {
+			bestellungen.add(bestellung);
+		}
+	}
 
 	public List<Bestellung> getBestellungen() {
 		return bestellungen;
