@@ -1,16 +1,27 @@
 package group.bestellungProject.model;
 import java.util.List;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "bestellung")
 public class Bestellung {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int bestellungNr;
-
+	
+	@OneToMany(targetEntity = Produkt.class, cascade = CascadeType.ALL) // doc them ve cascade
+	@JoinColumn(name = "liste_produkte", referencedColumnName = "bestellungNr")
 	private List<Produkt> produkte;
-
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "bestell_kunden", referencedColumnName = "bestellungNr")
 	private Kunde kunde;
-
+	
+	@Column(name = "summe")
 	private double summe;
-
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@Column(name = "zahlungart")
 	private ZArt zahlungArt;
 	
 	public Bestellung(int bestellungNr, Kunde kunde, List<Produkt> produkte, ZArt zahlungArt) {
