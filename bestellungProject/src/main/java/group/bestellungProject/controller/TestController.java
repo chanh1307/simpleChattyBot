@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -35,4 +36,28 @@ public class TestController {
 		testService.addKunde(kunde);
 		return "redirect:/kunden";
 	}
+
+	@GetMapping("kunden/edit/{id}")
+	public String editKundenForm(@PathVariable int id, Model model) {
+		model.addAttribute("kunde", testService.getKundeById(id));
+		return "edit_kunde";
+	}
+
+	@PostMapping("kunden/{id}")
+	public String updateKunden(@PathVariable int id, @ModelAttribute("kunde")Kunde kunde, Model model) {
+		Kunde existKunde = testService.getKundeById(id);
+		existKunde.setId(id);
+		existKunde.setKundenName(kunde.getKundenName());
+		existKunde.setAdresse(kunde.getAdresse());
+		existKunde.setTelNr(kunde.getTelNr());
+		testService.updateKunde(existKunde);
+		return "redirect:/kunden";
+	}
+
+	@GetMapping("/kunden/{id}")
+	public String deleteKunden(@PathVariable int id){
+		testService.deleteKundeById(id);
+		return "redirect:/kunden";
+	}
+
 }

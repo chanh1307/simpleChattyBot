@@ -10,4 +10,5 @@ public interface TestService {
     Kunde updateKunde(Kunde kunde);
     Kunde getKundeById(int id);
     void deleteKundeById(int id);
+    //List<Kunde> findBy
 }
