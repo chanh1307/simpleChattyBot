@@ -1,19 +1,13 @@
 package group.bestellungProject.controller;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
+import group.bestellungProject.model.Produkt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import group.bestellungProject.model.Kunde;
-import group.bestellungProject.model.Produkt;
-import group.bestellungProject.model.Verwaltung;
 
 
 @Controller
@@ -30,7 +24,7 @@ public class ProduktController {
 	//retrieve
 	@GetMapping("/produkt")
 	public String listProdukt(Model model) {
-		model.addAttribute("produkt",produktService.getAllProdukt());
+		model.addAttribute("produkten",produktService.getAllProdukt());
 		return "produkt";
 	}
 	

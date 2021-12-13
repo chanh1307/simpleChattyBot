@@ -45,13 +45,14 @@
         </thead>
 
         <tbody>
-        <tr th:each = "prod: ${produkte}">
-            <td th:text = "${prod.getproduktName()}"></td>
-            <td th:text = "${prod.getPreis()}"></td>
-            <td th:text = "${prod.getBeschreibung()}"></td>
+        <tr th:each = "produkt: ${produkten}">
+
+            <td th:text = "${produkt.getproduktName()}"></td>
+            <td th:text = "${produkt.getPreis()}"></td>
+            <td th:text = "${produkt.getBeschreibung()}"></td>
             <td>
-                <a th:href="@{/produkt/edit/{id}(id=${produkt.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/produkt/{id}(id=${produkt.id})}" class="btn btn-danger">Löschen</a>
+                <!--<a th:href="@{/produkt/edit/{id}(id=${prod.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/produkt/{id}(id=${prod.id})}" class="btn btn-danger">Löschen</a>-->
             </td>
         </tr>
         </tbody>

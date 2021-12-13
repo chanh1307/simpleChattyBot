@@ -12,10 +12,10 @@ public class KassenController {
 	
 	private Verwaltung verwaltung;
 	public KassenController () {
-		verwaltung = new Verwaltung();
-		kundenController = new KundenController(this);
-		bestellungController = new BestellungController(this);
-		produktController = new ProduktController(this);
+		//verwaltung = new Verwaltung();
+		//kundenController = new KundenController(this);
+		//bestellungController = new BestellungController(this);
+		//produktController = new ProduktController(this);
 		
 		
 		
